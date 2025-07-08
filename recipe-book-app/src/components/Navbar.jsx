@@ -1,8 +1,11 @@
+import logo from "../assets/logo.png";
+
 function Navbar() {
   return (
-    <div>
-      <h1>Here goes title + logo</h1>
-    </div>
+    <header>
+      <img src={logo} alt="app logo" />
+      <h1>Recipe Book</h1>
+    </header>
   );
 }
 
