@@ -2,8 +2,12 @@ function Sidebar() {
   return (
     <aside>
       <nav>
-        <ul>link to Home</ul>
-        <ul>link to About</ul>
+        <ul>
+          <a href="#">Home</a>
+        </ul>
+        <ul>
+          <a href="#">About Us</a>
+        </ul>
       </nav>
     </aside>
   );

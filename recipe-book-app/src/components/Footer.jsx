@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <h3>Here goes long to github</h3>
+      <h3>Here goes link to github</h3>
     </footer>
   );
 }

@@ -8,7 +8,11 @@ function App() {
   return (
     <>
       <Navbar />
-      <Sidebar />
+      <div className="content">
+        <Sidebar />
+        <div className="main"></div>
+        {/*here RecipeList instead of these div and put class "main" inside RecipeList??*/}
+      </div>
       <Footer />
     </>
   );
