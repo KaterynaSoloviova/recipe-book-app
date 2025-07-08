@@ -3,10 +3,12 @@ function Sidebar() {
     <aside>
       <nav>
         <ul>
-          <a href="#">Home</a>
-        </ul>
-        <ul>
-          <a href="#">About Us</a>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About Us</a>
+          </li>
         </ul>
       </nav>
     </aside>

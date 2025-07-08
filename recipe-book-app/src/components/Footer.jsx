@@ -1,7 +1,15 @@
+import logo from "../assets/github-mark-white.png";
+
 function Footer() {
   return (
     <footer>
-      <h3>Here goes link to github</h3>
+      <img src={logo} alt="github logo" />
+      <a
+        href="https://github.com/KaterynaSoloviova/recipe-book-app"
+        target="_blank"
+      >
+        Visit the Github repository
+      </a>
     </footer>
   );
 }
