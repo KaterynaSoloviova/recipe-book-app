@@ -29,8 +29,9 @@ function RecipeList(props) {
           onClick={() => {
             deleteRecipe(recipeObj.id);
           }}
+          className="deleteBtn"
         >
-          Delete
+          <i className="fa fa-close"></i>
         </button>
       </RecipeCard>
     );
