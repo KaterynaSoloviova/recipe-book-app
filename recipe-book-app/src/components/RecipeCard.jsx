@@ -18,15 +18,18 @@ function RecipeCard(props) {
   }
 
   return (
-    <div className="recipeCard">
+    <div className="recipeCard" key={props.id}>
       <img className="recipeImage" src={props.imageUrl} alt={props.title} />
       <div className="recipeContent">
         <h1>{props.title}</h1>
         <h3>Time: {props.prepTime} min</h3>
-        <h3><span className={difficultyClass}>{props.difficulty}</span></h3>
+        <h3>
+          <span className={difficultyClass}>{props.difficulty}</span>
+        </h3>
         <h3>Category: {props.category}</h3>
         <h3 className="tagsContainer">{tags}</h3>
       </div>
+      {props.children}
     </div>
   );
 }
