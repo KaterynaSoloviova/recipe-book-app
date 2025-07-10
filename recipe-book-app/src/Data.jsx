@@ -18,7 +18,7 @@ export const items = [
     category: "Soup",
     prepTime: 110,
     serving: 6,
-    ingridients: [
+    ingredients: [
       {
         name: "Beef shank",
         quantity: "500g",
@@ -290,7 +290,7 @@ export const items = [
     category: "Dessert",
     prepTime: 45,
     serving: 6,
-    ingridients: [
+    ingredients: [
       {
         name: "Mascarpone cheese",
         quantity: "500g",
@@ -343,7 +343,6 @@ export const items = [
       fat: "28g",
     },
   },
-
   {
     id: "5",
     difficulty: "Easy",
@@ -354,7 +353,7 @@ export const items = [
     category: "Salad",
     prepTime: 25,
     serving: 4,
-    ingridients: [
+    ingredients: [
       {
         name: "Waxy potatoes",
         quantity: "800g",
@@ -423,7 +422,7 @@ export const items = [
     category: "Main Course",
     prepTime: 90,
     serving: 6,
-    ingridients: [
+    ingredients: [
       { name: "Eggplants", quantity: "3 large" },
       { name: "Minced lamb or beef", quantity: "500g" },
       { name: "Onion (chopped)", quantity: "1 large" },
@@ -469,7 +468,7 @@ export const items = [
     category: "Main Course",
     prepTime: 150,
     serving: 8,
-    ingridients: [
+    ingredients: [
       { name: "Black beans (dried)", quantity: "500g" },
       { name: "Pork shoulder (cubed)", quantity: "500g" },
       { name: "Smoked sausage (sliced)", quantity: "300g" },
@@ -513,7 +512,7 @@ export const items = [
     category: "Breakfast",
     prepTime: 20,
     serving: 2,
-    ingridients: [
+    ingredients: [
       { name: "Eggs", quantity: "4" },
       { name: "Ripe tomatoes (chopped)", quantity: "4" },
       { name: "Green peppers (sliced)", quantity: "2" },
