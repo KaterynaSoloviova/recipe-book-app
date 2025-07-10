@@ -40,6 +40,7 @@ header img {
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .recipeCard:hover {

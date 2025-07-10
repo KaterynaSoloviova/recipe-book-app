@@ -1,5 +1,7 @@
 import { items } from "../Data";
 import borscht from "../assets/borscht.jpg";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function RecipeCard(props) {
   const tags = props.tags.map((tag, index) => (
@@ -17,9 +19,23 @@ function RecipeCard(props) {
     difficultyClass = "medium";
   }
 
+  const navigate = useNavigate();
+
+  const goToRecipe = () => {
+    navigate(`/recipes/${props.id}`);
+  };
+
   return (
-    <div className="recipeCard" key={props.id}>
-      {props.children}
+    <div onClick={goToRecipe} className="recipeCard" key={props.id}>
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          props.onDelete(props.id);
+        }}
+        className="deleteBtn"
+      >
+        <i className="fa fa-close"></i>
+      </button>
       <img className="recipeImage" src={props.imageUrl} alt={props.title} />
       <div className="recipeContent">
         <h1>{props.title}</h1>
