@@ -11,6 +11,9 @@ function Sidebar() {
           <li>
             <NavLink to="/about">About Us</NavLink>
           </li>
+          <li>
+            <NavLink to="/create">Create</NavLink>
+          </li>
         </ul>
       </nav>
     </aside>

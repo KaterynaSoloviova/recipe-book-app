@@ -86,12 +86,7 @@ export const items = [
       "Serve hot, garnished with fresh dill and a generous spoonful of sour cream.",
     ],
     tags: ["Ukrainian", "Soup", "Beet", "Traditional"],
-    nutrition: {
-      calories: 350,
-      protein: "22g",
-      carbs: "30g",
-      fat: "15g",
-    },
+    calories: 350,
   },
   {
     id: "2",
@@ -184,12 +179,7 @@ export const items = [
       "Serve sliced roast with vegetables and cooking juices, garnished with fresh parsley.",
     ],
     tags: ["American", "Beef", "Comfort Food", "Slow-Cooked", "One-Pot"],
-    nutrition: {
-      calories: 550,
-      protein: "40g",
-      carbs: "20g",
-      fat: "35g",
-    },
+    calories: 550,
   },
   {
     id: "3",
@@ -273,12 +263,7 @@ export const items = [
       "Serve hot with shredded chicken, corn cob, and garnishes: sliced avocado, capers, fresh cilantro, and a drizzle of heavy cream.",
     ],
     tags: ["Colombian", "Soup", "Chicken", "Traditional", "Comfort Food"],
-    nutrition: {
-      calories: 450,
-      protein: "30g",
-      carbs: "35g",
-      fat: "20g",
-    },
+    calories: 450,
   },
   {
     id: "4",
@@ -336,12 +321,7 @@ export const items = [
       "Before serving, generously dust the top with cocoa powder.",
     ],
     tags: ["Italian", "Dessert", "Coffee", "Traditional"],
-    nutrition: {
-      calories: 420,
-      protein: "7g",
-      carbs: "35g",
-      fat: "28g",
-    },
+    calories: 420,
   },
   {
     id: "5",
@@ -405,12 +385,7 @@ export const items = [
       "Garnish with chopped parsley before serving.",
     ],
     tags: ["German", "Salad", "Easy", "Side Dish"],
-    nutrition: {
-      calories: 280,
-      protein: "7g",
-      carbs: "28g",
-      fat: "16g",
-    },
+    calories: 280,
   },
   {
     id: "6",
@@ -451,12 +426,7 @@ export const items = [
       "Let rest 15 minutes before serving.",
     ],
     tags: ["Greek", "Main Course", "Traditional", "Baked"],
-    nutrition: {
-      calories: 550,
-      protein: "30g",
-      carbs: "22g",
-      fat: "38g",
-    },
+    calories: 550,
   },
   {
     id: "7",
@@ -495,12 +465,7 @@ export const items = [
       "Serve with white rice, farofa, and orange slices to cut through the richness.",
     ],
     tags: ["Brazilian", "Stew", "Pork", "Traditional"],
-    nutrition: {
-      calories: 680,
-      protein: "42g",
-      carbs: "25g",
-      fat: "45g",
-    },
+    calories: 680,
   },
   {
     id: "8",
@@ -532,11 +497,6 @@ export const items = [
       "Serve immediately, garnished with fresh parsley.",
     ],
     tags: ["Turkish", "Breakfast", "Eggs", "Vegetarian"],
-    nutrition: {
-      calories: 220,
-      protein: "10g",
-      carbs: "8g",
-      fat: "16g",
-    },
+    calories: 200,
   },
 ];

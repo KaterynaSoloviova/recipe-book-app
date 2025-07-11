@@ -21,11 +21,7 @@ function RecipeOverview(props) {
 
   return (
     <div className="recipe-overview">
-      <img
-        className="recipe-image"
-        src={recipe.imageUrl}
-        alt={recipe.title}
-      />
+      <img className="recipe-image" src={recipe.imageUrl} alt={recipe.title} />
       <h1 className="recipe-title">{recipe.title}</h1>
       <p className="recipe-description">{recipe.description}</p>
 
@@ -40,7 +36,7 @@ function RecipeOverview(props) {
         <div className="value">{recipe.difficulty}</div>
 
         <div className="key">Calories:</div>
-        <div className="value">{recipe.nutrition.calories} kcal</div>
+        <div className="value">{recipe.calories} kcal</div>
 
         <div className="key">Tags:</div>
         <div className="value">{recipe.tags.join(", ")}</div>
