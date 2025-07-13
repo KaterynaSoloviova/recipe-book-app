@@ -9,10 +9,10 @@ function Sidebar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about">About Us</NavLink>
+            <NavLink to="/create">Add Recipe</NavLink>
           </li>
           <li>
-            <NavLink to="/create">Create</NavLink>
+            <NavLink to="/about">About Us</NavLink>
           </li>
         </ul>
       </nav>

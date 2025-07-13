@@ -10,7 +10,7 @@ function NotFound() {
           Uo oh, we can't seem to find the page you're looking for. <br />
           Try going back to the home page.
         </p>
-        <button>
+        <button className="btn">
           <Link to="/">Home</Link>
         </button>
       </div>
