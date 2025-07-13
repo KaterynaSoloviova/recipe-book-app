@@ -30,6 +30,20 @@ header img {
   padding: 20px;
 }
 
+/* Medium screens (tablet) */
+@media (max-width: 1100px) {
+  .recipeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 700px) {
+  .recipeGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Individual recipe card */
 .recipeCard {
   background-color: #ffffff;
