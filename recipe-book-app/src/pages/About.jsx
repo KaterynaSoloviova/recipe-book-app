@@ -23,7 +23,7 @@ function About() {
       </div>
       <hr />
       <div className="section">
-        <h2>The Developers</h2>
+        <h2 className="section-title">The Developers</h2>
         <h3>Kateryna</h3>
         <div className="overview-grid">
           <div className="key">
