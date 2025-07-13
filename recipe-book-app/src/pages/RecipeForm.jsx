@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function RecipeForm(props) {
   const [title, setTitle] = useState("");
@@ -19,6 +20,8 @@ function RecipeForm(props) {
   const [ingredients, setIngredients] = useState([]);
   const [ingredientName, setIngredientName] = useState("");
   const [ingredientQuantity, setIngredientQuantity] = useState("");
+
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -69,10 +72,31 @@ function RecipeForm(props) {
       ingredients: ingredients,
       instructions: instructions,
       tags: tags,
-      // nutrition: nutrition,
+      calories: calories,
     };
 
     props.onCreate(newRecipe);
+
+    setTitle("");
+    setDifficulty("");
+    setDescription("");
+    setImage("");
+    setCategory("");
+    setPrepTime("");
+    setServing("");
+    setCalories({});
+
+    setTags([]);
+    setTagElm("");
+
+    setInstructions([]);
+    setInstructionStep("");
+
+    setIngredients([]);
+    setIngredientName("");
+    setIngredientQuantity("");
+
+    navigate("/");
   };
 
   return (
@@ -178,7 +202,9 @@ function RecipeForm(props) {
             onChange={(e) => {
               setDescription(e.target.value);
             }}
-          ></textarea>
+          >
+            {description}
+          </textarea>
         </label>
         <br />
         <label htmlFor="ingredientName">
