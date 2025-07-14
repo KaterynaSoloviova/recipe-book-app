@@ -1,0 +1,279 @@
+.recipe-form-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.general-panel {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background: #f9f9f9;
+    padding-right: 40px;
+}
+
+.recipe-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.recipe-form input[type="text"],
+.recipe-form input[type="number"],
+.recipe-form input[type="file"],
+.recipe-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 0.3rem;
+}
+
+.recipe-form textarea {
+    height: 80px;
+}
+
+.recipe-form button {
+    padding: 0.6rem 1.2rem;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.recipe-form button:hover {
+    background-color: #45a049;
+}
+
+.recipe-form ul,
+.recipe-form ol {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.recipe-form img {
+    max-width: 300px;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    display: block;
+}
+
+
+/* ==============================
+   Two Column Layout
+============================== */
+
+.recipe-form-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.form-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.left-column {
+    flex: 0 0 40%;
+}
+
+.right-column {
+    flex: 0 0 55%;
+}
+
+/* ==============================
+   Ingredients Panel Styles
+============================== */
+
+.ingredients-panel {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background: #f9f9f9;
+}
+
+.ingredients-panel h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.ingredient-fields {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.ingredient-fields input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.recipe-form button {
+    padding: 0.5rem 1rem;
+    background-color: #ba8530;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: medium;
+}
+
+.recipe-form button:hover {
+    background-color: #b2653b;
+}
+
+
+#create-btn {
+    font-size: large;
+    background-color: #ff5722;
+}
+
+#create-btn:hover {
+    background-color: #c83a0e;
+}
+
+.ingredients-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.ingredients-list li {
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+/* Ingredients List as Table */
+.ingredients-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.ingredients-table th,
+.ingredients-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.ingredients-table th {
+    font-weight: bold;
+    background: #f7f7f7;
+}
+
+.image-preview {
+    max-width: 400px;
+}
+
+/* ==============================
+   Instructions Panel Styles
+============================== */
+
+.steps-panel {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background: #f9f9f9;
+}
+
+.steps-panel h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.steps-fields {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.steps-fields input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.steps-list {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.steps-list li {
+    margin-bottom: 0.3rem;
+    color: #333;
+}
+
+
+/* Numbered Steps List */
+.steps-list {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.steps-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    gap: 0.75rem;
+}
+
+.step-number {
+    min-width: 28px;
+    height: 28px;
+    background-color: #ff5722;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step-text {
+    flex: 1;
+    color: #333;
+}
+
+.tags-panel {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    background: #f9f9f9;
+}
+
+.tags-fields {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tags-fields input[type="text"] {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

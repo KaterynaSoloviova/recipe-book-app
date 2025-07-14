@@ -1,14 +1,7 @@
-import { items } from "../Data";
-import borscht from "../assets/borscht.jpg";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Tags from "./Tags";
 
 function RecipeCard(props) {
-  const tags = props.tags.map((tag, index) => (
-    <span key={index} className="tag">
-      {tag}
-    </span>
-  ));
 
   let difficultyClass = "easy";
   if (props.difficulty === "Easy") {
@@ -44,7 +37,7 @@ function RecipeCard(props) {
           <span className={difficultyClass}>{props.difficulty}</span>
         </h3>
         <h3>Category: {props.category}</h3>
-        <h3 className="tagsContainer">{tags}</h3>
+        <Tags tags={props.tags}/>
       </div>
     </div>
   );

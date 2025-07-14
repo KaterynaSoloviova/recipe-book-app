@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Tags from "../components/Tags";
+import "./RecipeForm.css";
 
 function RecipeForm(props) {
   const [title, setTitle] = useState("");
@@ -100,211 +102,228 @@ function RecipeForm(props) {
   };
 
   return (
-    <div>
+    <div className="recipe-form-container">
       <h2>Create new recipe</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-          Title:
-          <input
-            id="title"
-            type="text"
-            name="title"
-            value={title}
-            placeholder="enter the title"
-            onChange={(e) => {
-              setTitle(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <br />
-        <label htmlFor="difficulty">
-          Difficulty:
-          <input
-            id="difficulty"
-            type="text"
-            name="difficulty"
-            value={difficulty}
-            placeholder="enter the difficulty"
-            onChange={(e) => {
-              setDifficulty(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <br />
-        <label htmlFor="category">
-          Category:
-          <input
-            id="category"
-            type="text"
-            name="category"
-            value={category}
-            placeholder="enter the category"
-            onChange={(e) => {
-              setCategory(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <br />
-        <label htmlFor="prepTime">
-          Preparation Time:
-          <input
-            id="prepTime"
-            type="number"
-            name="prepTime"
-            value={prepTime}
-            placeholder="enter the time to prepare"
-            onChange={(e) => {
-              setPrepTime(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <br />
-        <label htmlFor="serving">
-          Servings:
-          <input
-            id="serving"
-            type="number"
-            name="serving"
-            value={serving}
-            placeholder="enter the servings"
-            onChange={(e) => {
-              setServing(e.target.value);
-            }}
-            required
-          />
-        </label>
-        <br />
-        <label htmlFor="image">
-          Upload image:
-          <input
-            id="image"
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-          />
-        </label>
-        {image && (
-          <div>
-            <p>Image preview:</p>
-            <img src={image} alt="preview" style={{ maxWidth: "200px" }} />
-          </div>
-        )}
-        <br />
-        <label htmlFor="description">
-          Description:
-          <textarea
-            id="description"
-            name="description"
-            onChange={(e) => {
-              setDescription(e.target.value);
-            }}
-          >
-            {description}
-          </textarea>
-        </label>
-        <br />
-        <label htmlFor="ingredientName">
-          Ingredient Name:
-          <input
-            id="ingredientName"
-            type="text"
-            name="ingredients"
-            value={ingredientName}
-            placeholder="enter the ingredient name"
-            onChange={(e) => {
-              setIngredientName(e.target.value);
-            }}
-          />
-        </label>
-        <label>
-          Quantity:
-          <input
-            id="ingredientQuantity"
-            type="text"
-            name="ingredientQuantity"
-            value={ingredientQuantity}
-            placeholder="enter the quantity"
-            onChange={(e) => {
-              setIngredientQuantity(e.target.value);
-            }}
-          />
-          <button type="button" onClick={addIngredient}>
-            Add Ingredient
-          </button>
-        </label>
-        {/* List added ingredients */}
-        <ul>
-          {ingredients.map((ing, idx) => (
-            <li key={idx}>
-              {ing.name} - {ing.quantity}
-            </li>
-          ))}
-        </ul>
-        <br />
-        <label htmlFor="instructions">
-          Instructions:
-          <input
-            id="instructions"
-            type="text"
-            name="instructions"
-            value={instructionStep}
-            placeholder="enter isntruction"
-            onChange={(e) => {
-              setInstructionStep(e.target.value);
-            }}
-          />
-          <button type="button" onClick={addInstruction}>
-            Add Instruction
-          </button>
-        </label>
-        <ol className="text-sm text-gray-700 list-decimal pl-5">
-          {instructions.map((step, idx) => (
-            <li key={idx}>{step}</li>
-          ))}
-        </ol>
-        <br />
-        <label htmlFor="calories">
-          Calories:
-          <input
-            id="calories"
-            type="number"
-            name="calories"
-            value={calories}
-            placeholder="enter calories"
-            onChange={(e) => {
-              setCalories(e.target.value);
-            }}
-          />
-        </label>
-        <br />
+      <form onSubmit={handleSubmit} className="recipe-form">
+        <div className="recipe-form-columns">
+          {/* Left Column */}
+          <div className="form-column left-column">
+            <div className="general-panel">
+              <label htmlFor="image">
+                Upload image:
+                <input
+                  id="image"
+                  type="file"
+                  name="image"
+                  onChange={handleImageChange}
+                />
+              </label>
+              {image && (
+                <div>
+                  <p>Image preview:</p>
+                  <img src={image} alt="preview" />
+                </div>
+              )}
+              <br />
 
-        <label htmlFor="tags">
-          Tags:
-          <input
-            id="tags"
-            type="text"
-            name="tags"
-            value={tagElm}
-            placeholder="enter new tag"
-            onChange={(e) => {
-              setTagElm(e.target.value);
-            }}
-          />
-          <button type="button" onClick={addTag}>
-            Add Tag
-          </button>
-        </label>
-        <ul className="text-sm text-gray-700 list-decimal pl-5">
-          {tags.map((step, idx) => (
-            <li key={idx}>{step}</li>
-          ))}
-        </ul>
-        <br />
-        <button>Create</button>
+              <label htmlFor="title">
+                Title:
+                <input
+                  id="title"
+                  type="text"
+                  name="title"
+                  value={title}
+                  placeholder="Enter the dish title"
+                  onChange={(e) => {
+                    setTitle(e.target.value);
+                  }}
+                  required
+                />
+              </label>
+             
+              <label htmlFor="difficulty">
+                Difficulty:
+                <input
+                  id="difficulty"
+                  type="text"
+                  name="difficulty"
+                  value={difficulty}
+                  placeholder="e.g. Easy"
+                  onChange={(e) => {
+                    setDifficulty(e.target.value);
+                  }}
+                  required
+                />
+              </label>
+           
+              <label htmlFor="category">
+                Category:
+                <input
+                  id="category"
+                  type="text"
+                  name="category"
+                  value={category}
+                  placeholder="e.g. Soup"
+                  onChange={(e) => {
+                    setCategory(e.target.value);
+                  }}
+                  required
+                />
+              </label>
+            
+              <label htmlFor="prepTime">
+                Preparation Time:
+                <input
+                  id="prepTime"
+                  type="number"
+                  name="prepTime"
+                  value={prepTime}
+                  placeholder="e.g. 90 minutes"
+                  onChange={(e) => {
+                    setPrepTime(e.target.value);
+                  }}
+                  required
+                />
+              </label>
+             
+              <label htmlFor="serving">
+                Servings:
+                <input
+                  id="serving"
+                  type="number"
+                  name="serving"
+                  value={serving}
+                  placeholder="e.g. 6 persons"
+                  onChange={(e) => {
+                    setServing(e.target.value);
+                  }}
+                  required
+                />
+              </label>
+
+              <label htmlFor="calories">
+                Calories:
+                <input
+                  id="calories"
+                  type="number"
+                  name="calories"
+                  value={calories}
+                  placeholder="e.g. 300 kcal"
+                  onChange={(e) => {
+                    setCalories(e.target.value);
+                  }}
+                />
+              </label>
+
+              <label htmlFor="description">
+                Description:
+                <textarea
+                  id="description"
+                  name="description"
+                  onChange={(e) => {
+                    setDescription(e.target.value);
+                  }}
+                >
+                  {description}
+                </textarea>
+              </label>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="form-column right-column">
+            <div className="ingredients-panel">
+              <h3>Ingredients</h3>
+              <div className="ingredient-fields">
+                <input
+                  id="ingredientName"
+                  type="text"
+                  name="ingredients"
+                  value={ingredientName}
+                  placeholder="e.g. Potatoes"
+                  onChange={(e) => setIngredientName(e.target.value)}
+                />
+                <input
+                  id="ingredientQuantity"
+                  type="text"
+                  name="ingredientQuantity"
+                  value={ingredientQuantity}
+                  placeholder="e.g. 500g"
+                  onChange={(e) => setIngredientQuantity(e.target.value)}
+                />
+              </div>
+              <button type="button" onClick={addIngredient}>
+                Add Ingredient
+              </button>
+
+              <table className="ingredients-table">
+                <thead>
+                  <tr>
+                    <th>Ingredient</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ingredients.map((ing, idx) => (
+                    <tr key={idx}>
+                      <td>{ing.name}</td>
+                      <td>{ing.quantity}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="steps-panel">
+              <h3>Steps</h3>
+
+              <div className="steps-fields">
+                <input
+                  id="instructions"
+                  type="text"
+                  name="instructions"
+                  value={instructionStep}
+                  placeholder="Enter instruction step"
+                  onChange={(e) => setInstructionStep(e.target.value)}
+                />
+                <button type="button" onClick={addInstruction}>
+                  Add Step
+                </button>
+              </div>
+
+              <ul className="steps-list">
+                {instructions.map((step, idx) => (
+                  <li key={idx}>
+                    <div className="step-number">{idx + 1}</div>
+                    <div className="step-text">{step}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+
+            <div class="tags-panel">
+              <h3>Tags</h3>
+              <div className="tags-fields">
+                <input
+                  id="tags"
+                  type="text"
+                  name="tags"
+                  value={tagElm}
+                  placeholder="Enter tag"
+                  onChange={(e) => {
+                    setTagElm(e.target.value);
+                  }}
+                />
+                <button type="button" onClick={addTag}>
+                  Add Tag
+                </button>
+              </div>
+               <Tags tags={tags}/>
+            </div>
+          </div>
+            <button id="create-btn">Create</button>
+        </div>
       </form>
     </div>
   );

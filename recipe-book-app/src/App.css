@@ -118,6 +118,7 @@ header img {
   position: absolute;
   right: 0.5rem;
 }
+
 .deleteBtn:hover {
   background-color: #802520;
   color: white;
