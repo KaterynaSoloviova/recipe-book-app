@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar(props) {
   return (
-    <aside>
+    <aside className={props.menuOpen ? "open" : ""}>
       <nav>
         <ul>
           <li>

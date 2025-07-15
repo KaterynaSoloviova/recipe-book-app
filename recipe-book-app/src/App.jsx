@@ -12,6 +12,13 @@ import NotFound from "./pages/NotFound";
 import RecipeForm from "./pages/RecipeForm";
 
 function App() {
+  // For the responsive menu:
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   const [recipes, setRecipes] = useState(items);
 
   const deleteRecipe = (recipeId) => {
@@ -37,9 +44,9 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar toggleMenu={toggleMenu} />
       <div className="content">
-        <Sidebar />
+        <Sidebar menuOpen={menuOpen} />
         <div className="main">
           <Routes>
             <Route
