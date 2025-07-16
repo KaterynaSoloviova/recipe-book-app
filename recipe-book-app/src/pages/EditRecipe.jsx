@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Tags from "../components/Tags";
 import "./RecipeForm.css";
 
-function EditRecipe(props) {
+function EditRecipe({ items, onUpdate }) {
   const { recipeId } = useParams();
 
-  const recipe = props.items.find((recipeObj) => recipeObj.id === recipeId);
+  const recipe = items.find((recipeObj) => recipeObj.id === recipeId);
 
   const [title, setTitle] = useState(recipe.title);
   const [difficulty, setDifficulty] = useState(recipe.difficulty);
@@ -84,7 +83,7 @@ function EditRecipe(props) {
       calories: calories,
     };
 
-    props.onUpdate(recipeId, newRecipe);
+    onUpdate(recipeId, newRecipe);
 
     setTitle("");
     setDifficulty("");
@@ -93,7 +92,7 @@ function EditRecipe(props) {
     setCategory("");
     setPrepTime("");
     setServing("");
-    setCalories({});
+    setCalories(0);
 
     setTags([]);
     setTagElm("");

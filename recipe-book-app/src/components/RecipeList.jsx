@@ -1,23 +1,22 @@
-import { useState } from "react";
-import borscht from "../assets/borscht.jpg";
 import RecipeCard from "./RecipeCard";
 
 function RecipeList(props) {
-  const list = props.items.map((recipeObj) => {
+  const list = props.items.map((recipe) => {
     return (
       <RecipeCard
-        key={recipeObj.id}
-        id={recipeObj.id}
-        title={recipeObj.title}
-        prepTime={recipeObj.prepTime}
-        category={recipeObj.category}
-        difficulty={recipeObj.difficulty}
-        tags={recipeObj.tags}
-        imageUrl={recipeObj.imageUrl}
+        key={recipe.id}
+        id={recipe.id}
+        title={recipe.title}
+        prepTime={recipe.prepTime}
+        category={recipe.category}
+        difficulty={recipe.difficulty}
+        tags={recipe.tags}
+        imageUrl={recipe.imageUrl}
         onDelete={props.onDelete}
       ></RecipeCard>
     );
   });
-  return <div className="recipeGrid">{list}</div>;
+  return <div className="recipe-grid">{list}</div>;
 }
+
 export default RecipeList;

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Tags from "../components/Tags";
 import "./RecipeForm.css";
 
-function RecipeForm(props) {
+function RecipeForm({ onCreate }) {
   const [title, setTitle] = useState("");
   const [difficulty, setDifficulty] = useState("");
   const [description, setDescription] = useState("");
@@ -11,7 +11,7 @@ function RecipeForm(props) {
   const [category, setCategory] = useState("");
   const [prepTime, setPrepTime] = useState("");
   const [serving, setServing] = useState("");
-  const [calories, setCalories] = useState("");
+  const [calories, setCalories] = useState(0);
 
   const [tags, setTags] = useState([]);
   const [tagElm, setTagElm] = useState("");
@@ -60,7 +60,7 @@ function RecipeForm(props) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleAddRecipe = (e) => {
     e.preventDefault();
 
     const newRecipe = {
@@ -77,7 +77,7 @@ function RecipeForm(props) {
       calories: calories,
     };
 
-    props.onCreate(newRecipe);
+    onCreate(newRecipe);
 
     setTitle("");
     setDifficulty("");
@@ -86,7 +86,7 @@ function RecipeForm(props) {
     setCategory("");
     setPrepTime("");
     setServing("");
-    setCalories({});
+    setCalories(0);
 
     setTags([]);
     setTagElm("");
@@ -104,7 +104,7 @@ function RecipeForm(props) {
   return (
     <div className="recipe-form-container">
       <h2>Create new recipe</h2>
-      <form onSubmit={handleSubmit} className="recipe-form">
+      <form onSubmit={handleAddRecipe} className="recipe-form">
         <div className="recipe-form-columns">
           {/* Left Column */}
           <div className="form-column left-column">

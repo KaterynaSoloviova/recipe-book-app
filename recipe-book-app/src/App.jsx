@@ -37,7 +37,6 @@ function App() {
     };
 
     const newList = [newRecipe, ...recipes];
-
     setRecipes(newList);
   };
 

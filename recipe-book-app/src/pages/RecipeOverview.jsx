@@ -1,9 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 
-function RecipeOverview(props) {
+function RecipeOverview({ items }) {
   const { recipeId } = useParams();
 
-  const recipe = props.items.find((recipeObj) => recipeObj.id === recipeId);
+  const recipe = items.find((recipeObj) => recipeObj.id === recipeId);
 
   const ingredients = recipe.ingredients.map((ingredient, index) => (
     <div key={index} className="ingredient-item">

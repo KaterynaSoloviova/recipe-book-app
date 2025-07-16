@@ -31,7 +31,9 @@ function About() {
             </a>
           </div>
           <div className="value">
-            <a href="#">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/kateryna-soloviova-b4629b157/">
+              LinkedIn
+            </a>
           </div>
         </div>
         <h3>Andres</h3>
