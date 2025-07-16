@@ -327,6 +327,20 @@ footer a:hover {
   }
 }
 
+#edit-btn {
+  padding: 0.5rem 1rem;
+  background-color: #ba8530;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: medium;
+}
+
+#edit-btn:hover {
+  background-color: #b2653b;
+}
+
 /* Small screens (mobile) */
 @media (max-width: 700px) {
   .recipeGrid {

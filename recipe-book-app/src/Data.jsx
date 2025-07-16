@@ -17,7 +17,7 @@ export const items = [
     imageUrl: borschtImage,
     category: "Soup",
     prepTime: 110,
-    serving: 6,
+    servings: 6,
     ingredients: [
       {
         name: "Beef shank",
@@ -274,7 +274,7 @@ export const items = [
     imageUrl: tiramisuImage,
     category: "Dessert",
     prepTime: 45,
-    serving: 6,
+    servings: 6,
     ingredients: [
       {
         name: "Mascarpone cheese",
@@ -332,7 +332,7 @@ export const items = [
     imageUrl: kartoffelSalatImage,
     category: "Salad",
     prepTime: 25,
-    serving: 4,
+    servings: 4,
     ingredients: [
       {
         name: "Waxy potatoes",
@@ -396,7 +396,7 @@ export const items = [
     imageUrl: greekMoussakaImage,
     category: "Main Course",
     prepTime: 90,
-    serving: 6,
+    servings: 6,
     ingredients: [
       { name: "Eggplants", quantity: "3 large" },
       { name: "Minced lamb or beef", quantity: "500g" },
@@ -437,7 +437,7 @@ export const items = [
     imageUrl: feijoadaImage,
     category: "Main Course",
     prepTime: 150,
-    serving: 8,
+    servings: 8,
     ingredients: [
       { name: "Black beans (dried)", quantity: "500g" },
       { name: "Pork shoulder (cubed)", quantity: "500g" },
@@ -476,7 +476,7 @@ export const items = [
     imageUrl: menemenImage,
     category: "Breakfast",
     prepTime: 20,
-    serving: 2,
+    servings: 2,
     ingredients: [
       { name: "Eggs", quantity: "4" },
       { name: "Ripe tomatoes (chopped)", quantity: "4" },

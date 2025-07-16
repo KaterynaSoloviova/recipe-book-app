@@ -1,25 +1,32 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Tags from "../components/Tags";
 import "./RecipeForm.css";
 
-function RecipeForm(props) {
-  const [title, setTitle] = useState("");
-  const [difficulty, setDifficulty] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
-  const [category, setCategory] = useState("");
-  const [prepTime, setPrepTime] = useState("");
-  const [serving, setServing] = useState("");
-  const [calories, setCalories] = useState("");
+function EditRecipe(props) {
+  const { recipeId } = useParams();
 
-  const [tags, setTags] = useState([]);
+  const recipe = props.items.find((recipeObj) => recipeObj.id === recipeId);
+  console.log(recipe);
+
+  const [title, setTitle] = useState(recipe.title);
+  const [difficulty, setDifficulty] = useState(recipe.difficulty);
+  const [description, setDescription] = useState(recipe.description);
+  const [image, setImage] = useState(recipe.imageUrl);
+  const [category, setCategory] = useState(recipe.category);
+  const [prepTime, setPrepTime] = useState(recipe.prepTime);
+  const [serving, setServing] = useState(recipe.servings);
+  const [calories, setCalories] = useState(recipe.calories);
+
+  const [tags, setTags] = useState(recipe.tags);
   const [tagElm, setTagElm] = useState("");
 
-  const [instructions, setInstructions] = useState([]);
+  const [instructions, setInstructions] = useState(recipe.instructions);
   const [instructionStep, setInstructionStep] = useState("");
 
-  const [ingredients, setIngredients] = useState([]);
+  const [ingredients, setIngredients] = useState(recipe.ingredients);
   const [ingredientName, setIngredientName] = useState("");
   const [ingredientQuantity, setIngredientQuantity] = useState("");
 
@@ -64,6 +71,7 @@ function RecipeForm(props) {
     e.preventDefault();
 
     const newRecipe = {
+      id: recipeId,
       title: title,
       difficulty: difficulty,
       description: description,
@@ -77,7 +85,7 @@ function RecipeForm(props) {
       calories: calories,
     };
 
-    props.onCreate(newRecipe);
+    props.onUpdate(recipeId, newRecipe);
 
     setTitle("");
     setDifficulty("");
@@ -103,7 +111,7 @@ function RecipeForm(props) {
 
   return (
     <div className="recipe-form-container">
-      <h2>Create new recipe</h2>
+      <h2>Update recipe</h2>
       <form onSubmit={handleSubmit} className="recipe-form">
         <div className="recipe-form-columns">
           {/* Left Column */}
@@ -321,11 +329,11 @@ function RecipeForm(props) {
               <Tags tags={tags} />
             </div>
           </div>
-          <button id="create-btn">Create</button>
+          <button id="create-btn">Update</button>
         </div>
       </form>
     </div>
   );
 }
 
-export default RecipeForm;
+export default EditRecipe;

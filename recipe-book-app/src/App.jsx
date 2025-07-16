@@ -10,6 +10,7 @@ import About from "./pages/About";
 import RecipeOverview from "./pages/RecipeOverview";
 import NotFound from "./pages/NotFound";
 import RecipeForm from "./pages/RecipeForm";
+import EditRecipe from "./pages/EditRecipe";
 
 function App() {
   // For the responsive menu:
@@ -42,6 +43,13 @@ function App() {
     setRecipes(newList);
   };
 
+  const updateRecipe = (recipeId, updatedRecipe) => {
+    const newList = recipes.filter((recipe) => {
+      return recipe.id !== recipeId;
+    });
+    setRecipes([updatedRecipe, ...newList]);
+  };
+
   return (
     <>
       <Navbar toggleMenu={toggleMenu} />
@@ -60,6 +68,10 @@ function App() {
             <Route
               path="/recipes/:recipeId"
               element={<RecipeOverview items={recipes} />}
+            />
+            <Route
+              path="/recipes/:recipeId/update"
+              element={<EditRecipe items={recipes} onUpdate={updateRecipe} />}
             />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />

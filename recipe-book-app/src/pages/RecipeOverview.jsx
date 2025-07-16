@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function RecipeOverview(props) {
   const { recipeId } = useParams();
@@ -22,6 +22,9 @@ function RecipeOverview(props) {
   return (
     <div className="recipe-overview">
       <img className="recipe-image" src={recipe.imageUrl} alt={recipe.title} />
+      <Link to={`/recipes/${recipeId}/update`}>
+        <button id="edit-btn">Edit</button>
+      </Link>
       <h1 className="recipe-title">{recipe.title}</h1>
       <p className="recipe-description">{recipe.description}</p>
 
@@ -30,7 +33,7 @@ function RecipeOverview(props) {
         <div className="value">{recipe.prepTime} minutes</div>
 
         <div className="key">Servings:</div>
-        <div className="value">{recipe.serving} people</div>
+        <div className="value">{recipe.servings} people</div>
 
         <div className="key">Difficulty:</div>
         <div className="value">{recipe.difficulty}</div>
