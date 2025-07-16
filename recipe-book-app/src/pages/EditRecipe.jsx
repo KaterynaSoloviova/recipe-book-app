@@ -9,7 +9,6 @@ function EditRecipe(props) {
   const { recipeId } = useParams();
 
   const recipe = props.items.find((recipeObj) => recipeObj.id === recipeId);
-  console.log(recipe);
 
   const [title, setTitle] = useState(recipe.title);
   const [difficulty, setDifficulty] = useState(recipe.difficulty);

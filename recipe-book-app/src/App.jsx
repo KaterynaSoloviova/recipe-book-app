@@ -31,14 +31,12 @@ function App() {
 
   const createRecipe = (newRecipeDetails) => {
     const nextId = Math.max(...recipes.map((recipe) => recipe.id)).toString();
-    console.log(nextId);
     const newRecipe = {
       ...newRecipeDetails,
       id: nextId + 1,
     };
 
     const newList = [newRecipe, ...recipes];
-    console.log(newList);
 
     setRecipes(newList);
   };
