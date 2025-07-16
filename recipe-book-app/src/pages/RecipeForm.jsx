@@ -220,12 +220,11 @@ function RecipeForm(props) {
                 <textarea
                   id="description"
                   name="description"
+                  value={description}
                   onChange={(e) => {
                     setDescription(e.target.value);
                   }}
-                >
-                  {description}
-                </textarea>
+                />
               </label>
             </div>
           </div>
@@ -301,7 +300,7 @@ function RecipeForm(props) {
               </ul>
             </div>
 
-            <div class="tags-panel">
+            <div className="tags-panel">
               <h3>Tags</h3>
               <div className="tags-fields">
                 <input
